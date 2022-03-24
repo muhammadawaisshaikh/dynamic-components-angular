@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { ModalComponent } from 'src/app/components/modal/modal.component';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private viewContainerRef: ViewContainerRef
+  ) { }
 
   ngOnInit(): void {
+    this.createMyModalComponent();
+  }
+
+  createMyModalComponent() {
+    this.viewContainerRef.createComponent(ModalComponent);
   }
 
 }
