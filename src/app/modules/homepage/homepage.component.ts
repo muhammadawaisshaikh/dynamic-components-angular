@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
+
+// Dynamic Component 
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 
 @Component({
@@ -16,6 +18,7 @@ export class HomepageComponent implements OnInit {
     this.createMyModalComponent();
   }
 
+  // adding dynamic component to your DOM with viewContainerRef
   createMyModalComponent() {
     this.viewContainerRef.createComponent(ModalComponent);
   }
